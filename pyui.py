@@ -7,8 +7,11 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import sys
+
 
 class Ui_Dialog(object):
+
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(400, 460)
@@ -55,3 +58,11 @@ class Ui_Dialog(object):
         self.password_label.setText(_translate("Dialog", "Password"))
         self.query_label.setText(_translate("Dialog", "Query"))
 
+if __name__ == "__main__":
+
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())
